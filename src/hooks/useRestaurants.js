@@ -9,7 +9,7 @@ export default (initialSearch) => {
         searchRestaurants(initialSearch);
     },[]);
 
-    const [showAlert, setShowAlert] = setState(false);
+    const [showAlert, setShowAlert] = useState(false);
     const [alertMessage, setAlertMessage] = useState('Something went wrong');
     useEffect(()=>{
         if(showAlert)
@@ -36,6 +36,6 @@ export default (initialSearch) => {
         }
     }
 
-    return(restaurants, searchRestaurants);
+    return [restaurants, searchRestaurants];
 
 }
