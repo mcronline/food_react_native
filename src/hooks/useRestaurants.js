@@ -2,13 +2,15 @@ import {useState, useEffect} from 'react';
 import { Alert } from 'react-native';
 import yelp from '../api/yelp';
 
-export default (initialSearch) => {
+export default (initialSearch = '') => {
 
+    //Restaurants State
     const [restaurants, setRestaurants] = useState([]);
     useEffect(() =>{
         searchRestaurants(initialSearch);
     },[]);
 
+    // Alert State
     const [showAlert, setShowAlert] = useState(false);
     const [alertMessage, setAlertMessage] = useState('Something went wrong');
     useEffect(()=>{
